@@ -5,7 +5,7 @@ const app = new Clarifai.App({
 });
 
 const handleApiCall = (req, res) => {
-	console.log('I am in image URL api');
+	res.json( req.body.input);
 	app.models
     .predict('a403429f2ddf4b49b307e318f00e528b', req.body.input)
     .then(data => {
